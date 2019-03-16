@@ -15,11 +15,11 @@
         </css-grid>
       </div>
       <Assistant
-        v-bind:visibility="questMap.data[0].assistant.visibility"
-        v-bind:roaming="questMap.data[0].assistant.roaming"
-        v-bind:positionTop="questMap.data[0].assistant.positionTop"
-        v-bind:positionLeft="questMap.data[0].assistant.positionLeft"
-        v-bind:feedback="questMap.data[0].assistant.feedback"
+        v-bind:visibility="questMap.assistant.visibility"
+        v-bind:roaming="questMap.assistant.roaming"
+        v-bind:positionTop="questMap.assistant.positionTop"
+        v-bind:positionLeft="questMap.assistant.positionLeft"
+        v-bind:feedback="questMap.assistant.feedback"
       ></Assistant>
     </ParallaxImage>
   </div>

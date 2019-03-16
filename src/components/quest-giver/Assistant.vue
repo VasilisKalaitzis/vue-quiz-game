@@ -4,7 +4,8 @@
     ref="cubicContainer"
     v-bind:style="{'display':visibility ? 'block' : 'none'}"
   >
-    <div class="cubic" ref="cubic" v-bind:style="{'top':positionTop, 'left':positionLeft}">
+    <div class="cubic" ref="cubic" v-bind:style="{'top':positionTop, 'left':positionLeft}"
+    v-on:click="giveFeedback">
       <css-grid gap="0px 0px" :columns="['1fr', '1fr','1fr']" :rows="['1fr','1fr','1fr','1fr']">
         <css-grid-item x="2" y="2" height="3">
           <div class="cubic-body"></div>
@@ -35,9 +36,13 @@ export default {
     visibility: Boolean,
     roaming: Boolean,
     positionTop: String,
-    positionLeft: String
+    positionLeft: String,
+    feedback: Array
   },
   methods: {
+    giveFeedback() {
+        alert('hi');
+    },
     cubicMovement() {
       const { cubicContainer, cubic } = this.$refs;
 

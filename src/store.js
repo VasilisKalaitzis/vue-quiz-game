@@ -7,20 +7,16 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     questGiver: {
-      data: [
-        {
           assistant: {
-            visibility: false,
+            visibility: true,
             roaming: true,
             positionTop: "0px",
             positionLeft: "0px",
             feedback: []
           }
-        }
-      ]
     },
     questHandler: {
-      visibility: false,
+      visibility: true,
       data: [
         {
           header: "What is your Class?",
@@ -122,8 +118,6 @@ export default new Vuex.Store({
       ]
     },
     questMap: {
-      data: [
-        {
           assistant: {
             visibility: true,
             roaming: false,
@@ -132,27 +126,33 @@ export default new Vuex.Store({
             feedback: [
               {
                 item: "questDialog",
-                action: "changeData",
-                value: 0
+                action: "changeVisibility",
+                value: true
               },
               {
-                item: "questMap",
-                action: "changeData",
-                value: 0
+                item: "questMap.assistant",
+                action: "changeVisibility",
+                value: true
               },
               {
-                item: "questGiver",
+                item: "questGiver.assistant",
                 action: "changeVisibility",
                 value: true
               }
             ]
           }
-        }
-      ]
     }
   },
   mutations: {
-    HANDLE_FEEDBACK: (state, feedback) => {}
+    HANDLE_FEEDBACK: (state, payload) => {
+      
+    },
+    CHANGE_VISIBILITY: (state, payload) => {
+      console.log('CHANGE_VISIBILITY')
+    },
+    CHANGE_VALUE:(state, payload) => {
+
+    }
   },
   actions: {}
 });

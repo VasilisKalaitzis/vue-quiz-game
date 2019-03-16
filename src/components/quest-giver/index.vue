@@ -1,11 +1,11 @@
 <template>
   <div class="m-sidebar">
     <Assistant
-      v-bind:visibility="questGiver.data[0].assistant.visibility"
-      v-bind:roaming="questGiver.data[0].assistant.roaming"
-      v-bind:positionTop="questGiver.data[0].assistant.positionTop"
-      v-bind:positionLeft="questGiver.data[0].assistant.positionLeft"
-      v-bind:feedback="questGiver.data[0].assistant.feedback"
+      v-bind:visibility="questGiver.assistant.visibility"
+      v-bind:roaming="questGiver.assistant.roaming"
+      v-bind:positionTop="questGiver.assistant.positionTop"
+      v-bind:positionLeft="questGiver.assistant.positionLeft"
+      v-bind:feedback="questGiver.assistant.feedback"
     ></Assistant>
   </div>
 </template>
