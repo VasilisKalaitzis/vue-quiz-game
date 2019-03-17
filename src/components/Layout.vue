@@ -1,6 +1,6 @@
 <template>
   <div class="main-layout">
-    <ParallaxImage v-bind:backgroundImage="'/src/assets/mountain_slide1.jpg'">
+    <ParallaxImage v-bind:backgroundImageClass="questMap.data[questMap.dataCounter].imageClass">
       <div class="fixed-container">
         <css-grid gap="0px 0px" :columns="['1fr', '2fr']" :rows="['1fr','1fr']">
           <css-grid-item x="1" y="2">

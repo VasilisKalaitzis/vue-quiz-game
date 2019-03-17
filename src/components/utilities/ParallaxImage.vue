@@ -1,7 +1,8 @@
 <template>
   <div
-    class="image-container bgrd-image"
-    v-bind:style="{ 'backgroundImage': backgroundImage, backgroundSize: backgroundSize, backgroundPosition:backgroundPosition }"
+    class="image-container"
+    v-bind:class="backgroundImageClass"
+    v-bind:style="{ backgroundSize: backgroundSize, backgroundPosition:backgroundPosition }"
   >
     <slot></slot>
   </div>
@@ -10,17 +11,12 @@
 <script>
 export default {
   props: {
-    imageSrc: {
-      default: "'../../assets/loader.gif",
-      type: String,
-      required: false
-    },
     parallaxSpeed: {
       default: 10,
       type: Number,
       required: false
     },
-    backgroundImage: String,
+    backgroundImageClass: String,
     backgroundSize: {
       default: "100%",
       type: String,
@@ -49,8 +45,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.bgrd-image {
+.bgrdImage {
   background-image: url("../../assets/mountain_slide1.jpg");
+}
+.bgrdImage2 {
+  background-image: url("../../assets/mountain_slide2.jpg");
+}
+.bgrdImage3 {
+  background-image: url("../../assets/mountain_slide3.jpg");
 }
 .image-container {
   /* Full height */

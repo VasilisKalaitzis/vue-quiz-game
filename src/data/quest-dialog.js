@@ -89,6 +89,12 @@ const questDialogData = {
             action: "changeComponent",
             property: "dataCounter",
             value: 6
+          },
+          {
+            item: "questMap",
+            action: "changeComponent",
+            property: "dataCounter",
+            value: 1
           }
         ]
       }
@@ -253,6 +259,12 @@ const questDialogData = {
         description: "",
         correct: "NA",
         feedback: [
+          {
+            item: "questMap",
+            action: "changeComponent",
+            property: "dataCounter",
+            value: 2
+          },
           {
             item: "questDialog",
             action: "changeComponent",
