@@ -86,7 +86,7 @@ export default new Vuex.Store({
         if (state["tips"] != "" && state["tips"] == tips) {
           state["tips"] = "";
         }
-      }, 1500);
+      }, 2500);
     },
     CORRECT_ANSWER_RECEIVED: state => {
       state["correctAnswers"]++;

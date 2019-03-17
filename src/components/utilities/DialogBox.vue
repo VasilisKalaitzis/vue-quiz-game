@@ -85,7 +85,12 @@ export default {
   margin-top: 15px;
   font-size: 0.9em;
 }
+
 .action-button {
   cursor: pointer;
+}
+.action-button:hover {
+  box-shadow: 7px 20px 16px -6px rgba(0, 0, 0, 0.1),
+    0 0px 0px 0 rgba(0, 0, 0, 0.1);
 }
 </style>
