@@ -7,6 +7,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import { CssGrid, CssGridItem, ViewportListener } from "vue-css-grid";
 
 require("./static/fonts.css");
+require("./static/transitions.css");
 
 Vue.use(BootstrapVue);
 

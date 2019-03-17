@@ -7,9 +7,14 @@
       <li
         class="dialog-row action-button"
         v-for="(row,i) in body"
-        :key="i + componentName + 'body'"
+        v-bind:key="i + componentName + 'body'"
       >
-        <span v-html="row.text"></span>
+        <span
+          v-html="row.text"
+          v-on:click="giveFeedback(row.feedback)"
+          v-on:mouseenter="showDescription(row.description)"
+          v-on:mouseleave="hideDescription"
+        ></span>
       </li>
     </ul>
     <div class="dialog-footer d-flex">
@@ -18,13 +23,15 @@
         v-for="(row,i) in footer"
         :key="i + componentName + 'footer'"
       >
-        <span v-html="row.text"></span>
+        <span v-html="row.text" v-on:click="giveFeedback(row.feedback)"></span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "DialogBox",
   props: {
@@ -32,6 +39,18 @@ export default {
     header: String,
     body: Array,
     footer: Array
+  },
+  methods: {
+    ...mapActions(["handleFeedback", "updateTips"]),
+    giveFeedback(feedback) {
+      this.handleFeedback(feedback);
+    },
+    showDescription(description) {
+      this.updateTips(description);
+    },
+    hideDescription() {
+      this.updateTips(null);
+    }
   }
 };
 </script>
@@ -53,7 +72,7 @@ export default {
 .dialog-row {
   padding: 0px 5px 0px 5px;
   margin-top: 15px;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 .action-button {
   cursor: pointer;

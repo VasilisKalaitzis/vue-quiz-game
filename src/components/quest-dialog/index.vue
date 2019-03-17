@@ -1,13 +1,14 @@
 <template>
-  <div class="quest-dialog" v-bind:style="{'display':questDialog.visibility ? 'block' : 'none'}">
-    <DialogBox
-      componentName="questDialog"
-      v-bind:header="questDialog.data[0].header"
-      v-bind:body="questDialog.data[0].body"
-      v-bind:footer="questDialog.data[0].footer"
-      v-bind:feedback="questDialog.data[0].feedback"
-    ></DialogBox>
-  </div>
+  <transition name="slide-fade-bottom">
+    <div class="quest-dialog" v-if="questDialog.visibility">
+      <DialogBox
+        componentName="questDialog"
+        v-bind:header="questDialog.data[questDialog.dataCounter].header"
+        v-bind:body="questDialog.data[questDialog.dataCounter].body"
+        v-bind:footer="questDialog.data[questDialog.dataCounter].footer"
+      ></DialogBox>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -34,6 +35,6 @@ export default {
   background-color: seashell;
   opacity: 0.9;
 
-  min-height: 200px;
+  min-height: 240px;
 }
 </style>

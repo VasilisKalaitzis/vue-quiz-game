@@ -17,7 +17,7 @@ export default {
 
 <style>
 #app {
-  font: 400 50px/1 "Great Vibes", Helvetica, sans-serif;
+  font: 400 27px/1 "Berkshire Swash", Helvetica, sans-serif;
   color: black;
   text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -31,7 +31,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   #app {
-    font-size: 20px;
+    font-size: 13px;
   }
 }
 </style>

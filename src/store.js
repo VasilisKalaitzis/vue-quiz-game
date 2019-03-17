@@ -1,158 +1,98 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+import questHandlerData from "./data/quest-handler.js";
+import questDialogData from "./data/quest-dialog.js";
+import questMapData from "./data/quest-map.js";
+
 Vue.use(Vuex);
 
 // Tech Debt: These should be pulled by the server
 export default new Vuex.Store({
   state: {
+    tips: null,
     questGiver: {
-          assistant: {
-            visibility: true,
-            roaming: true,
-            positionTop: "0px",
-            positionLeft: "0px",
-            feedback: []
-          }
+      assistant: {
+        visibility: false,
+        roaming: true,
+        positionTop: "0px",
+        positionLeft: "0px",
+        feedback: []
+      }
     },
     questHandler: {
-      visibility: true,
-      data: [
-        {
-          header: "What is your Class?",
-          body: [
-            {
-              text: "Warrior",
-              description: "You are a warrior",
-              correct: true,
-              feedback: [
-                {
-                  item: "questDialog",
-                  action: "changeData",
-                  value: 0
-                }
-              ]
-            },
-            {
-              text: "Wizard",
-              description: "You are a wizzard Harry!",
-              correct: true,
-              feedback: [
-                {
-                  item: "questDialog",
-                  action: "changeData",
-                  value: 1
-                }
-              ]
-            }
-          ],
-          footer: []
-        },
-        {
-          header: "Angry rocks are falling",
-          body: {
-            text: "I'm going to climb them",
-            description: "Are you sure about that?!",
-            correct: true,
-            feedback: [
-              {
-                item: "questDialog",
-                action: "changeData",
-                value: 0
-              }
-            ]
-          },
-          footer: []
-        }
-      ]
+      visibility: false,
+      dataCounter: 0,
+      data: questHandlerData
     },
     questDialog: {
       visibility: true,
-      data: [
-        {
-          header:
-            "Hey! Hey, you there! <br/> Where are you looking at? <b>Scroll down</b> and <b>click on me!</b>",
-          body: [],
-          footer: []
-        },
-        {
-          header: "dialog2",
-          body: [],
-          footer: [
-            {
-              text: "Previous",
-              description: "",
-              correct: true,
-              feedback: [
-                {
-                  item: "questDialog",
-                  action: "changeData",
-                  value: 0
-                },
-                {
-                  item: "questHandler",
-                  action: "changeData",
-                  value: 0
-                }
-              ]
-            },
-            {
-              text: "Next",
-              description: "",
-              correct: true,
-              feedback: [
-                {
-                  item: "questDialog",
-                  action: "changeData",
-                  value: 0
-                },
-                {
-                  item: "questHandler",
-                  action: "changeData",
-                  value: 0
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      dataCounter: 0,
+      data: questDialogData
     },
     questMap: {
-          assistant: {
-            visibility: true,
-            roaming: false,
-            positionTop: "90%",
-            positionLeft: "50%",
-            feedback: [
-              {
-                item: "questDialog",
-                action: "changeVisibility",
-                value: true
-              },
-              {
-                item: "questMap.assistant",
-                action: "changeVisibility",
-                value: true
-              },
-              {
-                item: "questGiver.assistant",
-                action: "changeVisibility",
-                value: true
-              }
-            ]
+      dataCounter: 0,
+      assistant: {
+        visibility: true,
+        roaming: false,
+        positionTop: "90%",
+        positionLeft: "50%",
+        feedback: [
+          {
+            item: "questMap",
+            action: "changeAssistant",
+            property: "visibility",
+            value: false
+          },
+          {
+            item: "questGiver",
+            action: "changeAssistant",
+            property: "visibility",
+            value: true
+          },
+          {
+            item: "questDialog",
+            action: "changeComponent",
+            property: "dataCounter",
+            value: 1
           }
+        ]
+      },
+      data: questMapData
     }
   },
   mutations: {
-    HANDLE_FEEDBACK: (state, payload) => {
-      
+    CHANGE_COMPONENT: (state, payload) => {
+      state[payload.item][payload.property] = payload.value;
     },
-    CHANGE_VISIBILITY: (state, payload) => {
-      console.log('CHANGE_VISIBILITY')
+    CHANGE_ASSISTANT: (state, payload) => {
+      state[payload.item].assistant[payload.property] = payload.value;
     },
-    CHANGE_VALUE:(state, payload) => {
-
+    UPDATE_TIPS: (state, tips) => {
+      state["tips"] = tips;
     }
   },
-  actions: {}
+  actions: {
+    handleFeedback: (context, feedback) => {
+      for (var modify of feedback) {
+        switch (modify.action) {
+          case "changeComponent": {
+            context.commit("CHANGE_COMPONENT", modify);
+            break;
+          }
+          case "changeAssistant": {
+            context.commit("CHANGE_ASSISTANT", modify);
+            break;
+          }
+          default: {
+            console.log("Invalid action");
+            break;
+          }
+        }
+      }
+    },
+    updateTips: (context, tips) => {
+      context.commit("UPDATE_TIPS", tips);
+    }
+  }
 });

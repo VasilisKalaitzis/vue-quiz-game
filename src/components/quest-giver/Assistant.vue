@@ -4,16 +4,27 @@
     ref="cubicContainer"
     v-bind:style="{'display':visibility ? 'block' : 'none'}"
   >
-    <div class="cubic" ref="cubic" v-bind:style="{'top':positionTop, 'left':positionLeft}"
-    v-on:click="giveFeedback">
-      <css-grid gap="0px 0px" :columns="['1fr', '1fr','1fr']" :rows="['1fr','1fr','1fr','1fr']">
-        <css-grid-item x="2" y="2" height="3">
+    <div
+      class="cubic"
+      ref="cubic"
+      v-bind:style="{'top':positionTop, 'left':positionLeft}"
+      v-on:click="giveFeedback"
+    >
+      <css-grid
+        gap="0px 0px"
+        :columns="['1fr', '1fr','1fr','3fr']"
+        :rows="['8fr','1fr','1fr','1fr','1fr']"
+      >
+        <css-grid-item x="1" y="1" width="4" height="1">
+          <BubbleChat v-bind:msg="tips"></BubbleChat>
+        </css-grid-item>
+        <css-grid-item x="2" y="3" height="3">
           <div class="cubic-body"></div>
         </css-grid-item>
-        <css-grid-item x="1" y="1">
+        <css-grid-item x="1" y="2">
           <div class="cubic-left-wing" ref="cubicWing1"></div>
         </css-grid-item>
-        <css-grid-item x="3" y="1">
+        <css-grid-item x="3" y="2">
           <div class="cubic-right-wing" ref="cubicWing2"></div>
         </css-grid-item>
       </css-grid>
@@ -23,9 +34,13 @@
 
 <script>
 import { TimelineMax, Power2, TimelineLite } from "gsap/TweenMax";
+import { mapActions } from "vuex";
+import { mapState } from "vuex";
+import BubbleChat from "../utilities/BubbleChat.vue";
 
 export default {
   name: "Assistant",
+  components: { BubbleChat },
   data() {
     return {
       cubicTimeline: null,
@@ -39,9 +54,13 @@ export default {
     positionLeft: String,
     feedback: Array
   },
+  computed: {
+    ...mapState(["tips"])
+  },
   methods: {
+    ...mapActions(["handleFeedback"]),
     giveFeedback() {
-        alert('hi');
+      this.handleFeedback(this.feedback);
     },
     cubicMovement() {
       const { cubicContainer, cubic } = this.$refs;
