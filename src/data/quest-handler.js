@@ -127,10 +127,10 @@ const questHandlerData = {
   },
   2: {
     header:
-      "Furious Dragon with breath that spits defects and wings that can reopen tickets",
+      "Furious unicorn with breath that spits defects and wings that can reopen tickets",
     body: [
       {
-        text: "Pet the dragon",
+        text: "Pet the unicorn",
         description: "He is cute to my eyes!",
         correct: true,
         feedback: [
@@ -149,7 +149,7 @@ const questHandlerData = {
         ]
       },
       {
-        text: "Fight the dragon",
+        text: "Fight the unicorn",
         description: "But the deadlines are already here!",
         correct: false,
         feedback: [

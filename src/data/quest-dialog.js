@@ -102,7 +102,7 @@ const questDialogData = {
   },
   6: {
     header:
-      "Our task takes us deep into the 'Silicon Valley' where the evil 'Product Owner' have woken up the release process, shaping it into the form of an huge dragon!",
+      "Our task takes us deep into the 'Silicon Valley' where the evil 'Product Owner' have woken up the release process, shaping it into the form of an huge unicorn!",
     body: [],
     footer: [
       {
@@ -289,12 +289,12 @@ const questDialogData = {
   },
   14: {
     header:
-      "Nevermind! The dragon is here!!! He seems mad and wish to speak with you!",
+      "Nevermind! The unicorn is here!!! He seems mad and wish to speak with you!",
     body: [],
     footer: []
   },
   15: {
-    header: "Yes! We pet the dragon!",
+    header: "Yes! We pet the unicorn!",
     body: [],
     footer: [
       {
@@ -313,7 +313,7 @@ const questDialogData = {
     ]
   },
   16: {
-    header: "No. We can't fight the dragon. He has the key to production!",
+    header: "No. We can't fight the unicorn. He has the key to production!",
     body: [],
     footer: [
       {
@@ -333,7 +333,7 @@ const questDialogData = {
   },
   17: {
     header:
-      "No. We can't outrun the dragon. He will gets us before our next Spring",
+      "No. We can't outrun the unicorn. He will gets us before our next Spring",
     body: [],
     footer: [
       {
