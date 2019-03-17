@@ -33,7 +33,7 @@ export default {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 70px;
+  left: 50px;
   width: 0;
   height: 0;
   border: 30px solid transparent;
