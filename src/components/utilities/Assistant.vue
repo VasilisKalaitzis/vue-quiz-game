@@ -110,7 +110,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
+@wingHeigh: 10px;
+@wingWidth: 35px;
+@wingRotation: 30deg;
+
 .cubic-container {
   position: relative;
   height: 100%;
@@ -144,16 +148,16 @@ export default {
   margin-left: auto;
   background: whitesmoke;
   border-radius: 50%;
-  height: 10px;
-  width: 35px;
-  transform: rotate(30deg);
+  height: @wingHeigh;
+  width: @wingWidth;
+  transform: rotate(@wingRotation);
 }
 .cubic-right-wing {
   margin-right: auto;
   background: whitesmoke;
   border-radius: 50%;
-  height: 10px;
-  width: 35px;
-  transform: rotate(-30deg);
+  height: @wingHeigh;
+  width: @wingWidth;
+  transform: rotate(-@wingRotation);
 }
 </style>

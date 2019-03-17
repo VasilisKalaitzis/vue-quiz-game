@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 .bgrd-image {
   background-image: url("../../assets/mountain_slide1.jpg");
 }

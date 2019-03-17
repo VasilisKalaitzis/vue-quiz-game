@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Assistant from "./Assistant.vue";
+import Assistant from "../utilities/Assistant.vue";
 import { mapState } from "vuex";
 
 export default {
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
 .m-sidebar {
   border-radius: 0.3em;
   margin: 0px 10px 10px 10px;

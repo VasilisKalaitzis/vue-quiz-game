@@ -5,7 +5,7 @@ const questHandlerData = {
       {
         text: "Abyssal warlock",
         description: "Are you a wizard Harry?",
-        correct: true,
+        correct: false,
         feedback: [
           {
             item: "questDialog",
@@ -24,7 +24,7 @@ const questHandlerData = {
       {
         text: "Overpowered killer monkey",
         description: "Can alter requirements on will?",
-        correct: true,
+        correct: false,
         feedback: [
           {
             item: "questDialog",
@@ -68,7 +68,7 @@ const questHandlerData = {
       {
         text: "I am going to lift them one by one",
         description: "But there are deadlines comming up!",
-        correct: true,
+        correct: false,
         feedback: [
           {
             item: "questDialog",
@@ -87,7 +87,7 @@ const questHandlerData = {
       {
         text: "I am going to use fly",
         description: "The solution to our everyday problems?",
-        correct: true,
+        correct: false,
         feedback: [
           {
             item: "questDialog",
@@ -104,7 +104,7 @@ const questHandlerData = {
         ]
       },
       {
-        text: "Fall down and cry for help",
+        text: "I am going to fall down and cry for help",
         description: "The client will never know!",
         correct: true,
         feedback: [
@@ -151,7 +151,7 @@ const questHandlerData = {
       {
         text: "Fight the dragon",
         description: "But the deadlines are already here!",
-        correct: true,
+        correct: false,
         feedback: [
           {
             item: "questDialog",
@@ -170,7 +170,7 @@ const questHandlerData = {
       {
         text: "Run for your life",
         description: "Remember that pile of rock behind us?",
-        correct: true,
+        correct: false,
         feedback: [
           {
             item: "questDialog",

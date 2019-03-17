@@ -1,0 +1,53 @@
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+@opacityOut: 0;
+@cubicBezier: 1, 0.5, 0.8, 1;
+@cubicBezierReverse: 0.8, 1, 1, 0.5;
+
+/* simple fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: @opacityOut;
+}
+
+/* slide right */
+.slide-fade-right-enter-active {
+  transition: all 1s ease;
+}
+.slide-fade-right-leave-active {
+  transition: all 1s cubic-bezier(@cubicBezier);
+}
+.slide-fade-right-enter, .slide-fade-right-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(600px);
+  opacity: @opacityOut;
+}
+
+/* slide left */
+.slide-fade-left-enter-active {
+  transition: all 2s ease;
+}
+.slide-fade-left-leave-active {
+  transition: all 2s cubic-bezier(@cubicBezierReverse);
+}
+.slide-fade-left-enter, .slide-fade-left-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-600px);
+  opacity: @opacityOut;
+}
+
+/* slide bottom */
+.slide-fade-bottom-enter-active {
+  transition: all 1s ease;
+}
+.slide-fade-bottom-leave-active {
+  transition: all 0.8s cubic-bezier(@cubicBezier);
+}
+.slide-fade-bottom-enter, .slide-fade-bottom-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(600px);
+  opacity: @opacityOut;
+}

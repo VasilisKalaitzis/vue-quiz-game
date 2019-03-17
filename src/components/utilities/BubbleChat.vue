@@ -17,13 +17,13 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
 .bubble-chat {
   position: relative;
   background: white;
   border-radius: 0.6em;
-  height: 80%;
-  width: 250px;
+  min-height: 60%;
+  width: 150px;
   opacity: 0.9;
 
   font-size: 0.9em;

@@ -12,7 +12,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -43,7 +43,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -62,7 +62,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -82,7 +82,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -102,7 +102,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -128,7 +128,7 @@ const questDialogData = {
   },
   7: {
     header:
-      "But wait?!.. What's that?! A pile of rocks blocking our path! <b>What will our hero do?</b>",
+      "But wait?!.. What's that?! A pile of rocks blocking our path! <b>What will our rockstar do?</b>",
     body: [],
     footer: []
   },
@@ -140,7 +140,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -160,7 +160,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -180,7 +180,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -200,7 +200,7 @@ const questDialogData = {
       {
         text: "Next!",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -213,14 +213,13 @@ const questDialogData = {
     ]
   },
   12: {
-    header:
-      "I was wondering if instead of setting a camp tonight you could work overtime..",
+    header: "Instead of setting a camp tonight, could you work overtime?",
     body: [],
     footer: [
       {
         text: "Previous",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -233,7 +232,7 @@ const questDialogData = {
       {
         text: "Whatever",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -252,7 +251,7 @@ const questDialogData = {
       {
         text: "Oh well...",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -289,7 +288,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -308,7 +307,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -328,7 +327,7 @@ const questDialogData = {
       {
         text: "Next",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
           {
             item: "questDialog",
@@ -346,15 +345,25 @@ const questDialogData = {
     body: [],
     footer: [
       {
-        text: "Next",
+        text: "Submit & Continue",
         description: "",
-        correct: true,
+        correct: "NA",
         feedback: [
+          {
+            item: "questResult",
+            action: "submitResult"
+          },
           {
             item: "questDialog",
             action: "changeComponent",
             property: "visibility",
             value: false
+          },
+          {
+            item: "questResult",
+            action: "changeComponent",
+            property: "visibility",
+            value: true
           }
         ]
       }

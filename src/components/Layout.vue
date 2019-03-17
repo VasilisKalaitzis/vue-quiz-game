@@ -12,6 +12,9 @@
           <css-grid-item x="1" y="1">
             <QuestGiver v-bind:msg="mimsg"/>
           </css-grid-item>
+          <css-grid-item x="1" y="1">
+            <QuestResult/>
+          </css-grid-item>
         </css-grid>
       </div>
       <Assistant
@@ -30,7 +33,8 @@ import ParallaxImage from "./utilities/ParallaxImage.vue";
 import QuestGiver from "./quest-giver/index.vue";
 import QuestDialog from "./quest-dialog/index.vue";
 import QuestHandler from "./quest-handler/index.vue";
-import Assistant from "./quest-giver/Assistant.vue";
+import QuestResult from "./quest-result/index.vue";
+import Assistant from "./utilities/Assistant.vue";
 import { mapState } from "vuex";
 
 export default {
@@ -41,6 +45,7 @@ export default {
     QuestGiver,
     QuestDialog,
     QuestHandler,
+    QuestResult,
     Assistant
   },
   data() {
@@ -70,7 +75,7 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
 .main-layout {
   height: 2800px;
 }

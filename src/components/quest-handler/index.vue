@@ -1,5 +1,5 @@
 <template>
-  <transition name="slide-fade">
+  <transition name="slide-fade-right">
     <div class="quest-handler" v-if="questHandler.visibility">
       <DialogBox
         componentName="questHandler"
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
 .quest-handler {
   margin: 0px 0px 0px 5px;
   border-radius: 0.3em;

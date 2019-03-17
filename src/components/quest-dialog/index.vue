@@ -28,7 +28,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
 .quest-dialog {
   border-radius: 0.3em;
   margin: 0px 5px 0px 5px;

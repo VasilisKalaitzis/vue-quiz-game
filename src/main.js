@@ -5,9 +5,10 @@ import BootstrapVue from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import { CssGrid, CssGridItem, ViewportListener } from "vue-css-grid";
+import otherPlayerResults from "./data/other_player_results.js";
 
-require("./static/fonts.css");
-require("./static/transitions.css");
+require("./static/fonts.less");
+require("./static/transitions.less");
 
 Vue.use(BootstrapVue);
 

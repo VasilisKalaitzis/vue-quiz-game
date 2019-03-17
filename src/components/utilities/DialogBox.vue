@@ -11,7 +11,7 @@
       >
         <span
           v-html="row.text"
-          v-on:click="giveFeedback(row.feedback)"
+          v-on:click="handler(row.feedback,row.correct)"
           v-on:mouseenter="showDescription(row.description)"
           v-on:mouseleave="hideDescription"
         ></span>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
   name: "DialogBox",
@@ -41,9 +41,17 @@ export default {
     footer: Array
   },
   methods: {
-    ...mapActions(["handleFeedback", "updateTips"]),
+    ...mapActions(["handleFeedback", "updateTips", "handleAnswer"]),
     giveFeedback(feedback) {
       this.handleFeedback(feedback);
+    },
+    submitAnswer(isAnswerCorrect) {
+      // TECH DEBT: of course the answer's correctness should not be known to the client. especially to the view
+      this.handleAnswer(isAnswerCorrect);
+    },
+    handler: function(feedback, isAnswerCorrect) {
+      this.giveFeedback(feedback);
+      this.submitAnswer(isAnswerCorrect);
     },
     showDescription(description) {
       this.updateTips(description);
@@ -51,12 +59,15 @@ export default {
     hideDescription() {
       this.updateTips(null);
     }
+  },
+  computed: {
+    ...mapState(["correctAnswers", "wrongAnswers"])
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
 .container-header {
   padding: 1rem 0rem;
   margin-bottom: 0;
