@@ -56,7 +56,7 @@ const questDialogData = {
     ]
   },
   4: {
-    header: "Of course, but let's with the fighter fow now!",
+    header: "Of course, but let's stick with the fighter fow now!",
     body: [],
     footer: [
       {
