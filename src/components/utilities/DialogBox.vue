@@ -4,12 +4,9 @@
       <span v-html="header"></span>
     </div>
     <ul class="dialog-body">
-      <li
-        class="dialog-row action-button"
-        v-for="(row,i) in body"
-        v-bind:key="i + componentName + 'body'"
-      >
+      <li class="dialog-row" v-for="(row,i) in body" v-bind:key="i + componentName + 'body'">
         <span
+          class="action-button"
           v-html="row.text"
           v-on:click="handler(row.feedback,row.correct)"
           v-on:mouseenter="showDescription(row.description)"
@@ -19,11 +16,11 @@
     </ul>
     <div class="dialog-footer d-flex">
       <div
-        class="flex-fill dialog-row action-button"
+        class="flex-fill dialog-row"
         v-for="(row,i) in footer"
         :key="i + componentName + 'footer'"
       >
-        <span v-html="row.text" v-on:click="giveFeedback(row.feedback)"></span>
+        <span class="action-button" v-html="row.text" v-on:click="giveFeedback(row.feedback)"></span>
       </div>
     </div>
   </div>
@@ -88,9 +85,5 @@ export default {
 
 .action-button {
   cursor: pointer;
-}
-.action-button:hover {
-  box-shadow: 7px 20px 16px -6px rgba(0, 0, 0, 0.1),
-    0 0px 0px 0 rgba(0, 0, 0, 0.1);
 }
 </style>
