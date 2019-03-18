@@ -1,7 +1,6 @@
 const questHandlerData = {
   0: {
-    header:
-      "My current role is the role of a Software engineer at SG Digital / Openbet Ltd<b> My duties that directly involves the SCRUM team",
+    header: "My duties that directly involves the SCRUM team",
     body: [
       {
         text:
@@ -25,7 +24,15 @@ const questHandlerData = {
         feedback: []
       }
     ],
-    footer: []
+    footer: [
+      {
+        text:
+          "<span style='color:grey'>My current employer is SG Digital / Openbet Ltd</span>",
+        description: "",
+        correct: "NA",
+        feedback: []
+      }
+    ]
   },
   1: {
     header: "My daily duties as an individual",
@@ -56,7 +63,15 @@ const questHandlerData = {
         feedback: []
       }
     ],
-    footer: []
+    footer: [
+      {
+        text:
+          "<span style='color:grey'>My current employer is SG Digital / Openbet Ltd</span>",
+        description: "",
+        correct: "NA",
+        feedback: []
+      }
+    ]
   },
   2: {
     header: "Other duties that I take on from time to time",
@@ -81,14 +96,22 @@ const questHandlerData = {
         feedback: []
       }
     ],
-    footer: []
+    footer: [
+      {
+        text:
+          "<span style='color:grey'>My current employer is SG Digital / Openbet Ltd</span>",
+        description: "",
+        correct: "NA",
+        feedback: []
+      }
+    ]
   },
   3: {
     header: "TechInsights: Web platform and mobile application",
     body: [
       {
         text:
-          "The system I want to describe is called TechInsights. It’s a web platform created while I was working with TTS wireless. The initial team was composed only by two junior software engineers. The reason I choose to describe this project is because it was the first application I created during my professional career and from the mistakes that I did I learned valuable lessons",
+          "The system I want to describe is called TechInsights. It’s a web platform created while I was working with TTS wireless. The initial team was composed only by me and one more brilliant Software Engineer. The reason I choose to describe this project is because it was the first application I created during my professional career and from the mistakes that I did I learned valuable lessons",
         description:
           "I hope my answer is not completely off topic. Excuse me in case it is",
         correct: true,
@@ -116,7 +139,7 @@ const questHandlerData = {
     body: [
       {
         text:
-          "Initially I focused on the creation of the whole mobile version of the platform. I chose the technologies that it was going to use (Cordova, JQuery, KendoUI, CSS3). I assumed the role of UI/UX designer as well as the developer who analyse and implements until it hit the production",
+          "Initially I focused on the creation of the whole mobile version of the platform. I chose the technologies that it was going to use (Cordova, JQuery, KendoUI, CSS3). I assumed the role of UI/UX designer as well as the developer who analyse and implements until the product hit the production",
         description:
           "I hope my answer is not completely off topic. Excuse me in case it is",
         correct: true,
