@@ -161,6 +161,12 @@ const questDialogData = {
             action: "changeComponent",
             property: "dataCounter",
             value: 3
+          },
+          {
+            item: "questMap",
+            action: "changeComponent",
+            property: "dataCounter",
+            value: 1
           }
         ]
       }
@@ -187,6 +193,12 @@ const questDialogData = {
             action: "changeComponent",
             property: "dataCounter",
             value: 2
+          },
+          {
+            item: "questMap",
+            action: "changeComponent",
+            property: "dataCounter",
+            value: 0
           }
         ]
       },
