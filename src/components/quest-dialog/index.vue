@@ -35,6 +35,6 @@ export default {
   background-color: seashell;
   opacity: 0.9;
 
-  min-height: 240px;
+  height: 280px;
 }
 </style>

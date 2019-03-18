@@ -1,6 +1,7 @@
 <template>
   <div class="main-layout">
     <ParallaxImage v-bind:backgroundImageClass="questMap.data[questMap.dataCounter].imageClass">
+      <TextCopy/>
       <div class="fixed-container">
         <css-grid gap="0px 0px" :columns="['1fr', '2fr']" :rows="['1fr','1fr']">
           <css-grid-item x="1" y="2">
@@ -35,6 +36,7 @@ import QuestDialog from "./quest-dialog/index.vue";
 import QuestHandler from "./quest-handler/index.vue";
 import QuestResult from "./quest-result/index.vue";
 import Assistant from "./utilities/Assistant.vue";
+import TextCopy from "./utilities/TextCopy.vue";
 import { mapState } from "vuex";
 
 export default {
@@ -46,7 +48,8 @@ export default {
     QuestDialog,
     QuestHandler,
     QuestResult,
-    Assistant
+    Assistant,
+    TextCopy
   },
   data() {
     return {

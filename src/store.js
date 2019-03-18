@@ -21,7 +21,11 @@ export default new Vuex.Store({
         roaming: true,
         positionTop: "0px",
         positionLeft: "0px",
-        feedback: []
+        feedback: [
+          {
+            action: "copyToClipboard"
+          }
+        ]
       }
     },
     questHandler: {
@@ -65,6 +69,9 @@ export default new Vuex.Store({
             action: "changeComponent",
             property: "dataCounter",
             value: 1
+          },
+          {
+            action: "copyToClipboard"
           }
         ]
       },
@@ -102,6 +109,20 @@ export default new Vuex.Store({
     handleFeedback: (context, feedback) => {
       for (var modify of feedback) {
         switch (modify.action) {
+          case "copyToClipboard": {
+            /* Get the text field */
+            var copyText = document.getElementById("textToCopy");
+            /* Select the text field */
+            copyText.select();
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+            /* Alert the copied text */
+            context.commit(
+              "UPDATE_TIPS",
+              "Your text has been copied to the clipboard!"
+            );
+            break;
+          }
           case "changeComponent": {
             context.commit("CHANGE_COMPONENT", modify);
             break;

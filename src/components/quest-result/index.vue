@@ -3,10 +3,10 @@
     <div class="quest-result" v-if="questResult.visibility">
       <div class="container-padding dialog-box">
         <div class="container-header">
-          <span>Your Results are ready!</span>
+          <span>That's it!</span>
         </div>
         <div class="container-body">
-          <div class="container-row">
+          <!-- <div class="container-row">
             You answered
             <span class="big-fonts">{{ correctAnswers }}</span> correct answers!
           </div>
@@ -17,6 +17,10 @@
           <div class="container-row">
             Only
             <span class="big-fonts">{{ questResult.resultCompared }}%</span> of the adventurers reached this far!
+          </div>-->
+          <div class="container-row">
+            Thank you
+            <span class="big-fonts">so much</span> for your time
           </div>
         </div>
       </div>

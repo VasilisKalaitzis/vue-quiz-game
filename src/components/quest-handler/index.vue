@@ -34,6 +34,6 @@ export default {
   border-radius: 0.3em;
   background-color: white;
   opacity: 0.95;
-  min-height: 480px;
+  height: 560px;
 }
 </style>
